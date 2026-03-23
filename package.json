@@ -1,0 +1,27 @@
+{
+  "name": "wp-test-framework",
+  "version": "2.0.0",
+  "description": "Framework de testing E2E para sitios WordPress — Playwright + Cucumber + TypeScript",
+  "type": "commonjs",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:navigation": "cucumber-js --tags @navigation",
+    "test:seo": "cucumber-js --tags @seo",
+    "test:forms": "cucumber-js --tags @forms",
+    "test:regression": "cucumber-js --tags '@smoke or @navigation or @seo or @forms'",
+    "test:site": "cucumber-js --world-parameters '{\"site\": \"$SITE\"}'",
+    "test:headed": "HEADLESS=false cucumber-js",
+    "test:debug": "HEADLESS=false SLOWMO=500 cucumber-js",
+    "report": "cucumber-js --format html:reports/report.html",
+    "postinstall": "npx playwright install chromium"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.6.0",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0",
+    "dotenv": "^16.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
