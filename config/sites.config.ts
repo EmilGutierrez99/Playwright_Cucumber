@@ -63,7 +63,6 @@ export interface SiteConfig {
 // ─────────────────────────────────────────────────
 // SITIOS REGISTRADOS
 // ─────────────────────────────────────────────────
-
 export const sites: Record<string, SiteConfig> = {
 
   comandolibertad: {
