@@ -74,7 +74,7 @@ export const sites: Record<string, SiteConfig> = {
       inicio: {
         path: '/',
         sections: {
-          header:                  { qaAttr: 'header', global: true },
+          header:                 { qaAttr: 'header', global: true },
           footer:                  { qaAttr: 'footer', global: true },
           'slider-principal':      { qaAttr: 'slider-principal' },
           'quienes-somos':         { qaAttr: 'quienes-somos' },
