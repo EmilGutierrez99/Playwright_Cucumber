@@ -210,64 +210,6 @@ export const sites: Record<string, SiteConfig> = {
       },
     },
   },
-
-  sitiolocal: {
-  baseUrl: 'http://localhost:4321',
-  qaPrefix: 'local',
-
-  pages: {
-    // ── Equipo ──────────────────────────────────────
-    equipo: {
-      path: '/equipo',
-      sections: {
-        'contact-form': { qaAttr: 'contact-form' },
-      },
-    },
-  },
-
-  forms: {
-    contacto: {
-      pagePath: '/equipo',
-      formSelector: 'xpath=//*[@id="main-content"]/section[2]/div/div',
-      fields: {
-        nombre: {
-          selector: 'xpath=//*[@id="cf-nombre"]',
-          value: 'Juan García',
-          type: 'text',
-        },
-        ciudad: {
-          selector: 'xpath=//*[@id="cf-ciudad"]',
-          value: 'Springfield, USA',
-          type: 'text',
-        },
-        correo: {
-          selector: 'xpath=//*[@id="cf-email"]',
-          value: 'test@sitiolocal.com',
-          type: 'email',
-        },
-        telefono: {
-          selector: 'xpath=//*[@id="cf-telefono"]',
-          value: '12345678',
-          type: 'text',
-        },
-        comentarios: {
-          selector: 'xpath=//*[@id="cf-comentarios"]',
-          value: 'Mensaje de prueba automatizada.',
-          type: 'textarea',
-        },
-        enviar: {
-        selector: 'xpath=//*[@id="contact-form"]/div[2]/button',
-        value: 'Enviar',
-        type: 'text',
-        },
-      },
-      submitSelector: 'xpath=//*[@id="contact-form"]/div[2]/button',
-      successSelector: '',   // ← rellena cuando tengas el selector
-      errorSelectors: {},    // ← rellena cuando tengas errores configurados
-    },
-  },
-},
-
   // ─── EJEMPLO: otro sitio WordPress ──────────────
   // miotrowp: {
   //   baseUrl: 'https://www.miotrowp.com',
