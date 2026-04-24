@@ -64,7 +64,6 @@ export interface SiteConfig {
 // ─────────────────────────────────────────────────
 // SITIOS REGISTRADOS
 // ─────────────────────────────────────────────────
-
 export const sites: Record<string, SiteConfig> = {
 
   comandolibertad: {
@@ -136,6 +135,51 @@ export const sites: Record<string, SiteConfig> = {
           descripcion:   { qaAttr: 'descripcion' },
           // Bloque que contiene el formulario de contacto completo
           formulario:    { qaAttr: 'formulario' },
+        },
+      },
+
+      // ── Aportaciones ────────────────────────────────
+      // qa-ticbo="cmndlbrtd_aportaciones_ayuda-al-comando"
+      aportaciones: {
+        path: '/aportaciones/',
+        sections: {
+          header:                             { qaAttr: 'header', global: true },
+          footer:                             { qaAttr: 'footer', global: true },
+          'ayuda-al-comando':                 { qaAttr: 'ayuda-al-comando' },
+          'acciones':                         { qaAttr: 'acciones' },
+          'opciones-de-donacion':             { qaAttr: 'opciones-de-donacion' },
+          'donacion-transferencia-bancaria':  { qaAttr: 'donacion-transferencia-bancaria' },
+          'donacion-bizum':                   { qaAttr: 'donacion-bizum' },
+          'donacion-tarjeta-de-credito':      { qaAttr: 'donacion-tarjeta-de-credito' },
+          'donacion-paypal':                  { qaAttr: 'donacion-paypal' },
+          'donacion-suscripcion-mensual':     { qaAttr: 'donacion-suscripcion-mensual' },
+        },
+      },
+
+      // ── Noticias ────────────────────────────────────
+      // qa-ticbo="cmndlbrtd_noticias_<seccion>"
+      noticias: {
+        path: '/noticias/',
+        sections: {
+          header:                  { qaAttr: 'header', global: true },
+          footer:                  { qaAttr: 'footer', global: true },
+          // Agrega aquí las secciones reales de la página:
+          'noticias-prensa':              { qaAttr: 'prensa' },
+          'noticias-actualidad':          { qaAttr: 'actualidad' },
+          'noticias-hazte-voluntario':    { qaAttr: 'hazte-voluntario' },
+        },
+      },
+
+      // ── Hazte voluntario ────────────────────────────
+      // qa-ticbo="cmndlbrtd_hazte-voluntario_<seccion>"
+      'hazte-voluntario': {
+        path: '/hazte-voluntario/',
+        sections: {
+          header:                  { qaAttr: 'header', global: true },
+          footer:                  { qaAttr: 'footer', global: true },
+          // Agrega aquí las secciones reales de la página:
+          // 'formulario':         { qaAttr: 'formulario' },
+          // 'beneficios':         { qaAttr: 'beneficios' },
         },
       },
     },
