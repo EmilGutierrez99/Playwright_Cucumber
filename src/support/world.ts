@@ -60,6 +60,11 @@ export class CustomWorld extends World {
     }
     return `${this.siteConfig.baseUrl}${page.path}`;
   }
+
+  /** Espera un tiempo determinado en milisegundos */
+  async wait(ms: number = 4000): Promise<void> {
+  await this.page.waitForTimeout(ms);
+  }
 }
 
 setWorldConstructor(CustomWorld);
