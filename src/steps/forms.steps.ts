@@ -1,7 +1,7 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { CustomWorld } from '../support/world';
 import { FormPage } from '../pages/FormPage';
-import { sites } from '../../config/sites.config'; // ajusta la ruta si es necesario
+import { sites, getSite } from '../../config/sites/sites.index';// ajusta la ruta si es necesario
 
 // ─── VISIBILIDAD ────────────────────────────────
 Then(

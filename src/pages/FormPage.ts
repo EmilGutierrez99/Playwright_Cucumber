@@ -1,6 +1,6 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
-import { FormConfig } from '../../config/sites.config';
+import { FormConfig } from '../../config/sites/sites.index';
 
 /**
  * FormPage — interacciones con formularios WordPress.
