@@ -5,7 +5,7 @@
  */
 
 import * as dotenv from 'dotenv';
-import { sites, SiteConfig } from './sites.config';
+import { sites, getSite, SiteConfig } from '../config/sites/sites.index';
 
 dotenv.config();
 
@@ -22,24 +22,15 @@ export interface TestConfig {
 
 export function loadTestConfig(siteOverride?: string): TestConfig {
   const siteName = siteOverride || process.env.SITE || 'comandolibertad';
-  const site = sites[siteName];
-
-  if (!site) {
-    const available = Object.keys(sites).join(', ');
-    throw new Error(
-      `Sitio "${siteName}" no encontrado en sites.config.ts.\n` +
-      `Sitios disponibles: ${available}`
-    );
-  }
 
   return {
-    site,
+    site:                 getSite(siteName), // lanza error claro si no existe
     siteName,
-    headless: process.env.HEADLESS !== 'false',
-    slowMo: Number(process.env.SLOWMO) || 0,
-    defaultTimeout: Number(process.env.DEFAULT_TIMEOUT) || 30_000,
-    navigationTimeout: Number(process.env.NAVIGATION_TIMEOUT) || 45_000,
+    headless:             process.env.HEADLESS !== 'false',
+    slowMo:               Number(process.env.SLOWMO) || 0,
+    defaultTimeout:       Number(process.env.DEFAULT_TIMEOUT) || 30_000,
+    navigationTimeout:    Number(process.env.NAVIGATION_TIMEOUT) || 45_000,
     screenshotsOnFailure: process.env.SCREENSHOTS_ON_FAILURE !== 'false',
-    screenshotsDir: process.env.SCREENSHOTS_DIR || 'reports/screenshots',
+    screenshotsDir:       process.env.SCREENSHOTS_DIR || 'reports/screenshots',
   };
 }

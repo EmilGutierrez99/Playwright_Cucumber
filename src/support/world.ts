@@ -1,6 +1,6 @@
 import { World, IWorldOptions, setWorldConstructor } from '@cucumber/cucumber';
 import { BrowserContext, Page } from '@playwright/test';
-import { SiteConfig } from '../../config/sites.config';
+import { SiteConfig } from '../../config/sites/sites.index';
 import { loadTestConfig } from '../../config/test.config';
 
 export class CustomWorld extends World {
@@ -23,7 +23,7 @@ export class CustomWorld extends World {
     const config = loadTestConfig(siteOverride);
 
     this.siteConfig = config.site;
-    this.siteName = config.siteName;
+    this.siteName   = config.siteName;
   }
 
   /**
@@ -63,7 +63,7 @@ export class CustomWorld extends World {
 
   /** Espera un tiempo determinado en milisegundos */
   async wait(ms: number = 4000): Promise<void> {
-  await this.page.waitForTimeout(ms);
+    await this.page.waitForTimeout(ms);
   }
 }
 
